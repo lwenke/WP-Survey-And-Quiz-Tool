@@ -20,11 +20,10 @@
 <?php foreach ($question['answers'] as $key => $answer) { ?>
 	<tr>
 		<td><?php echo $answer['text']; ?></td>
-		<td><input type="radio" name="answers[<?php echo $questionKey; ?>][<?php echo $key; ?>]" value="<?php echo $answer['text']; ?>_1" id="answer_<?php echo $key; ?>" /></td>
-		<td><input type="radio" name="answers[<?php echo $questionKey; ?>][<?php echo $key; ?>]" value="<?php echo $answer['text']; ?>_2" id="answer_<?php echo $key; ?>" /></td>
-		<td><input type="radio" name="answers[<?php echo $questionKey; ?>][<?php echo $key; ?>]" value="<?php echo $answer['text']; ?>_3" id="answer_<?php echo $key; ?>" /></td>
-		<td><input type="radio" name="answers[<?php echo $questionKey; ?>][<?php echo $key; ?>]" value="<?php echo $answer['text']; ?>_4" id="answer_<?php echo $key; ?>" /></td>
-		<td><input type="radio" name="answers[<?php echo $questionKey; ?>][<?php echo $key; ?>]" value="<?php echo $answer['text']; ?>_5" id="answer_<?php echo $key; ?>" /></td>
+		<?php for ($i = 1; $i <= 5; $i++):?>
+		
+			<td><input type="radio" name="answers[<?php echo $questionKey; ?>][<?php echo $key; ?>]" <?php if ( in_array($answer['text'].'_'.$i, $givenAnswer) ) { ?> checked="checked" <?php } ?> value="<?php echo $answer['text']; ?>_<?php echo $i;?>" id="answer_<?php echo $key; ?>" /></td>
+		<?php endfor;?>
 	</tr>
 <?php } ?>
 
