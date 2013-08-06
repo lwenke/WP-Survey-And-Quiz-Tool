@@ -9,6 +9,7 @@
 			<h3><?php echo $question['name']; ?></h3>
 
 			<?php if ( $question['type'] == "Multiple Choice" ||
+					$question['type'] == "Single" ||
 					   $question['type'] == "Dropdown" ) {
 						$googleChartUrl = 'http://chart.apis.google.com/chart?chs=400x185&cht=p';
 						$valueArray    = array();
