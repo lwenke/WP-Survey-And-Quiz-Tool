@@ -444,8 +444,9 @@ class Wpsqt_System {
 	 */	
 	public static function getSurveyQuestionTypes(){
 		
-		$questions = array('Multiple Choice' => 'Multiple choice question with mulitple correct answers.',
-									  'Dropdown' => 'Multiple choice question with mulitple correct answers.',
+		$questions = array('Multiple Choice' => 'Multiple choice question with one or more answers.',
+					'Single' => 'Multiple choice question with one answer.',
+									  'Dropdown' => 'Multiple choice question with one answer.',
 									  'Likert' => '',
 									  'Likert Matrix' => 'Displays a matrix of likert scales from 1 to 5',
 									  'Free Text' => '');
